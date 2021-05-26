@@ -1,5 +1,6 @@
 # Python program to rotate an array by d elements
 # Function to left rotate arr[] of size n by d
+# Problem link - https://www.geeksforgeeks.org/array-rotation/
 
 # Helper method
 def rotate_by_one(arr, n) -> None:
