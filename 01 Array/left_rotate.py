@@ -18,13 +18,13 @@ def rotate_left(arr: list, d: int, n: int) -> None:
         d (int): By number of elements
         n (int): Size of an array
     """
-    # for i in range(d):
-    #     rotate_by_one(arr, n)
+    for i in range(d):
+        rotate_by_one(arr, n)
     print(f"Rotated array - {arr}")
 
 
 # Driver code
 arr = [1, 2, 3, 4, 5, 6, 7]
-d = 2
+d = 3
 n = 7
 rotate_left(arr, d, n)
