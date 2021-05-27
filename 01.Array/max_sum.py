@@ -12,6 +12,8 @@ def max_sum(arr: list):
 
     max_value = currunt_val
 
+    # try all rotations one by one and find the maximum
+    # rotation sum
     for j in range(1, n):
         currunt_val = currunt_val + arr_sum - n * arr[n-j]
         if currunt_val > max_value:
