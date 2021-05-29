@@ -5,7 +5,7 @@
 
 # Function to left rotate
 # an array k times
-def leftRotate(arr, n, k):
+def leftRotate(arr: list, n: int, k: int) -> None:
 	
 	# Print array
 	# after k rotations
