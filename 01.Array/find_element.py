@@ -4,7 +4,7 @@
 
 # Function to compute the element
 # at given index
-def findElement(arr, ranges, rotations, index) :
+def find_element(arr, ranges, rotations, index) :
 	
 	for i in range(rotations - 1, -1, -1 ) :
 	
@@ -35,4 +35,4 @@ ranges = [ [ 0, 2 ], [ 0, 3 ] ]
 
 index = 1
 
-print(findElement(arr, ranges, rotations, index))
+print(find_element(arr, ranges, rotations, index))
