@@ -6,6 +6,18 @@ def minimum_elememt(arr: list) -> int:
     low = 0
     high = n - 1
 
+    # We basically find index of minimum element
+    
+    # EASY METHOD
+    # min = arr[0]
+    # for i in range(0, n):
+
+    #     if min > arr[i]:
+
+    #         min = arr[i]
+    #         min_index = i
+    # return min
+
     while low < high:
         mid = low + (high - low) // 2
 
