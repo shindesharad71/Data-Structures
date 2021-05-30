@@ -10,10 +10,7 @@ def rearrange_odd_even(arr: list) -> list:
 
     odd_pos = n-even_pos
 
-    temp_arr = []
-    for i in range(0, n):
-        temp_arr.append(arr[i])
-
+    temp_arr = arr.copy()
     temp_arr.sort()
 
     j = odd_pos-1
