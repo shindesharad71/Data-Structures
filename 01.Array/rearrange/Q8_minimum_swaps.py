@@ -20,7 +20,7 @@ def min_swap(arr: list, k: int) -> int:
     # in current window of
     # size 'count'
     bad = 0
-    for i in range(0, count):
+    for i in range(count):
         if arr[i] > k:
             bad = bad + 1
 
