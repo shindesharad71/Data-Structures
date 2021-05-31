@@ -1,4 +1,5 @@
 # Implementing array data structure
+# https://medium.com/swlh/data-structure-and-algorithms-implement-dynamic-array-in-python-be47e1d6ce06
 class DynamicArray:
     def __init__(self):
         self.size = 0
@@ -31,19 +32,33 @@ class DynamicArray:
         self.size += 1
 
     def clear(self):
-        pass
+        self.size = 0
+        self.capacity = 1
+        self.arr = self._create_array(self.size)
 
-    def copy(self):
-        pass
+    def copy(self, new_arr):
+        for i in range(self.capacity):
+            new_arr[i] = self.arr[i]
 
-    def count(self):
-        pass
+        return new_arr
 
-    def extend(self):
-        pass
+    def count(self, element):
+        count = 0
+        for i in range(self.capacity):
+            if arr[i] == element:
+                count += 1
+        return count
 
-    def index(self):
-        pass
+    def extend(self, new_arr):
+        for elm in new_arr:
+            self.append(elm)
+        return self.arr
+
+    def index(self, element):
+        for i in range(self.capacity):
+            if arr[i] == element:
+                break
+        return i
 
     def insert(self):
         pass
@@ -52,7 +67,17 @@ class DynamicArray:
         return self.size
 
     def pop(self):
-        pass
+        element = None
+
+        if self.size > 0:
+            element = self.array[self.size - 1]
+            self.array[self.size - 1] = None
+            self.size -= 1
+
+            if self.size <= self.capacity // 4:
+                self._resize(self.capacity // 2)
+
+        return element
 
     def remove(self):
         pass
@@ -63,5 +88,8 @@ class DynamicArray:
     def sort(self):
         pass
 
+# Test code
 dynamic = DynamicArray()
-dynamic.s
+dynamic._create_array(2)
+dynamic.append(1)
+print(dynamic)
