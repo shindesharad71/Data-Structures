@@ -24,9 +24,9 @@ class DynamicArray:
         self.arr = new_arr
         self.capacity = new_capacity
 
-    def append(self, element):
+    def append(self, element: int):
         if self.size == self.capacity:
-            self.capacity = self.capacity * 2
+            self._resize(2 * self.capacity)
 
         self.arr[self.size] = element
         self.size += 1
@@ -48,11 +48,6 @@ class DynamicArray:
             if arr[i] == element:
                 count += 1
         return count
-
-    def extend(self, new_arr):
-        for elm in new_arr:
-            self.append(elm)
-        return self.arr
 
     def index(self, element):
         for i in range(self.capacity):
@@ -79,17 +74,27 @@ class DynamicArray:
 
         return element
 
-    def remove(self):
-        pass
+    def __repr__(self):
+        arr = ""
+        for i in range(self.size):
+            if i == 0:
+                arr = str(self.arr[0])
+            else:
+                arr = f"{arr} {self.arr[i]}"
 
-    def reverse(self):
-        pass
+        return arr
 
-    def sort(self):
-        pass
+
 
 # Test code
-dynamic = DynamicArray()
-dynamic._create_array(2)
-dynamic.append(1)
-print(dynamic)
+dynamic_arr = DynamicArray()
+
+dynamic_arr.append(1)
+dynamic_arr.append(2)
+dynamic_arr.append(3)
+dynamic_arr.append(4)
+dynamic_arr.append(5)
+dynamic_arr.append(6)
+print(dynamic_arr)
+
+print(dynamic_arr.__getitem__(2))
