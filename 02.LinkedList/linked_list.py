@@ -11,3 +11,23 @@ class LinkedList:
     # Function to initialize the Linked List object
     def __init__(self):
         self.head = None
+
+    def print(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next()
+
+
+# Driver Program
+if __name__ == "__main__":
+    linked_list = LinkedList()
+    linked_list.head = Node(1)
+    second = Node(2)
+    third = Node(3)
+    # Link first node with second
+    linked_list.head.next = second
+    # Link second node with the third node
+    second.next = third
+
+    linked_list.print()
