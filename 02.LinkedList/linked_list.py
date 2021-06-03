@@ -42,6 +42,35 @@ class LinkedList:
 
         last.next = new_node
 
+    def delete_node(self, key):
+
+        # Store head node
+        temp = self.head
+
+        # If head node itself holds the key to be deleted
+        if temp is not None:
+            if temp.data == key:
+                self.head = temp.next
+                temp = Node
+                return
+
+        # Search for the key to be deleted, keep track of the
+        # previous node as we need to change 'prev.next'
+        while temp is not None:
+            if temp.data == key:
+                break
+            prev = temp
+            temp = temp.next
+
+        # if key was not present in linked list
+        if temp == None:
+            return
+
+        # Unlink the node from linked list
+        prev.next = temp.next
+
+        temp = None
+
     def print_list(self):
         temp = self.head
         while temp:
@@ -81,4 +110,15 @@ if __name__ == "__main__":
     linked_list.insert_after(linked_list.head.next, 8)
 
     print("Created linked list is:", end=" ")
+    linked_list.print_list()
+
+    linked_list.push(7)
+    linked_list.push(1)
+    linked_list.push(3)
+    linked_list.push(2)
+
+    print("Created Linked List: ")
+    linked_list.print_list()
+    linked_list.delete_node(1)
+    print("\nLinked List after Deletion of 1:")
     linked_list.print_list()
