@@ -13,6 +13,11 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    def push(self, data):
+        new_node = Node(data)
+        node.next = self.head
+        self.head = new_node
+
     def print_list(self):
         temp = self.head
         while temp:
