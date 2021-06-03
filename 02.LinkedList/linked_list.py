@@ -161,6 +161,23 @@ class LinkedList:
 
         return False  # Data Not found
 
+    # Returns data at given index in linked list
+    def get_Nth(self, index):
+        current = self.head  # Initialise temp
+        count = 0  # Index of current node
+
+        # Loop while end of linked list is not reached
+        while current:
+            if count == index:
+                return current.data
+            count += 1
+            current = current.next
+
+        # if we get to this line, the caller was asking
+        # for a non-existent element so we assert fail
+        assert false
+        return 0
+
 
 # Driver Program
 if __name__ == "__main__":
