@@ -178,6 +178,17 @@ class LinkedList:
         assert false
         return 0
 
+    # Function to reverse the linked list
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current is not None:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
 
 # Driver Program
 if __name__ == "__main__":
