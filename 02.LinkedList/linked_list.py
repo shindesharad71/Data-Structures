@@ -115,6 +115,24 @@ class LinkedList:
             print(temp.data)
             temp = temp.next
 
+    def delete_list(self):
+
+        # initialize the current node
+        current = self.head
+        while current:
+            prev = current.next  # move next node
+
+            # delete the current node
+            del current.data
+
+            # set current equals prev node
+            current = prev
+
+        # In python garbage collection happens
+        # therefore, only
+        # self.head = None
+        # would also delete the link list
+
 
 # Driver Program
 if __name__ == "__main__":
