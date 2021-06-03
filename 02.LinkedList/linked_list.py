@@ -145,6 +145,22 @@ class LinkedList:
             temp = temp.next
         return count
 
+    # This Function checks whether the value
+    # x present in the linked list
+    def search(self, x):
+
+        # Initialize current to head
+        current = self.head
+
+        # loop till current not equal to None
+        while current != None:
+            if current.data == x:
+                return True  # data found
+
+            current = current.next
+
+        return False  # Data Not found
+
 
 # Driver Program
 if __name__ == "__main__":
