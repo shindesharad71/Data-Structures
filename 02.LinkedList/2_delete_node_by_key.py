@@ -31,3 +31,42 @@ class LinkedList:
                 temp.next = self.head
                 temp = None
                 return
+
+            # Search for the key to be deleted, keep track of the
+            # previous node as we need to change 'prev.next'
+            while temp is not None:
+                if temp.data == key:
+                    break
+                prev = temp
+                temp = temp.next
+
+            # Key was not present in the list
+            if temp == None:
+                return
+
+            # Unlink the node
+            prev.next = temp.next
+
+            temp = None
+
+    # Utility function to print the linked LinkedList
+    def printList(self):
+        temp = self.head
+        while temp:
+            print(" %d" % (temp.data)),
+            temp = temp.next
+
+
+if __name__ == "__main__":
+    # Driver program
+    llist = LinkedList()
+    llist.push(7)
+    llist.push(1)
+    llist.push(3)
+    llist.push(2)
+
+    print("Created Linked List: ")
+    llist.printList()
+    llist.delete_by_key(1)
+    print("\nLinked List after Deletion of 1:")
+    llist.printList()
