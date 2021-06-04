@@ -26,7 +26,9 @@ class LinkedList:
             print("The given previous node must be in LinkedList")
             return
 
+        # Create new node
         new_node = Node(data)
+        
         new_node.next = Node(data)
         new_node.next = prev_node.next
         prev_node.next = new_node
@@ -116,6 +118,8 @@ class LinkedList:
 
     def print_list(self):
         temp = self.head
+
+        # Traverse intire list
         while temp:
             print(temp.data)
             temp = temp.next
