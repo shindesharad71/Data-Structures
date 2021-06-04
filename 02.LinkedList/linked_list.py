@@ -34,12 +34,14 @@ class LinkedList:
     def append(self, data):
         new_node = Node(data)
 
+        # Check if list is empty
         if self.head is None:
             self.head = new_node
             return
 
         last = self.head
 
+        # Traverse until the last node
         while last.next:
             last = last.next
 
