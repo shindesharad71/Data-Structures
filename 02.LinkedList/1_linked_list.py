@@ -28,7 +28,7 @@ class LinkedList:
 
         # Create new node
         new_node = Node(data)
-        
+
         new_node.next = Node(data)
         new_node.next = prev_node.next
         prev_node.next = new_node
