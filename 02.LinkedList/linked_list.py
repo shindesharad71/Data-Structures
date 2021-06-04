@@ -14,7 +14,10 @@ class LinkedList:
         self.head = None
 
     def push(self, data):
+        # Create new node
         new_node = Node(data)
+
+        # Attach next of new node to head
         new_node.next = self.head
         self.head = new_node
 
