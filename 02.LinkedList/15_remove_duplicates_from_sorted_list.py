@@ -12,3 +12,5 @@ def remove_duplicates(self):
             temp.next = new
         else:
             temp = temp.next
+
+    return self.head
