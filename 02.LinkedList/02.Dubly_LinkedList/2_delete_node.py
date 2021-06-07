@@ -13,3 +13,7 @@ def delete_node(self, node):
     # Change next only if node to be deleted is NOT the last node
     if node.next is not None:
         node.next.prev = node.prev
+
+    # Change prev only if node to be deleted is NOT the first node
+    if node.prev is not None:
+        node.prev.next = node.next
