@@ -76,3 +76,33 @@ def append(self, data):
 
     # 7. Make last node as previous of new node
     new_node.prev = last
+
+
+# 4. Add a node before a given node
+def insert_before(self, next_node, data):
+    # 1. Check if given next node is Null
+    if next_node is None:
+        print("the given next node cannot be NULL")
+        return
+
+    # 2. Create node
+    new_node = Node(data)
+
+    # 4. Make prev of new node as prev of next_node
+    new_node.prev = next_node.prev
+
+    # 5. Make the prev of next_node as new_node
+    next_node.prev = new_node
+
+    # 6. Make next_node as next of new_node
+    new_node.next = next_node
+
+    # 7. Change next of new_node's previous node
+    if new_node.prev != None:
+        new_node.prev.next = new_node
+
+    # 8. If the prev of new_node is NULL, it will be the new head node
+    else:
+        head_ref = new_node
+
+    return head_ref
