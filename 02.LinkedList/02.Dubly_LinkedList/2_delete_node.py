@@ -1,4 +1,5 @@
 # Delete a node in a Doubly Linked List
+# https://www.geeksforgeeks.org/delete-a-node-in-a-doubly-linked-list/
 
 
 def delete_node(self, node):
