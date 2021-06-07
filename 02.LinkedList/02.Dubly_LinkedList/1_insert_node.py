@@ -48,3 +48,31 @@ def insert_After(self, prev_node, data):
     # 7. Change previous of new_node's next node
     if new_node.next is not None:
         new_node.next.prev = new_node
+
+
+# 3. Add node at the end
+def append(self, data):
+    # 1. Create Node & 2. Add data
+    new_node = Node(data)
+    last = self.head
+
+    # 3. This new node is going to be the
+    # last node, so make next of it as NULL
+    new_node.next = None
+
+    # 4. If the Linked List is empty, then
+    #  make the new node as head
+    if self.head is None:
+        new_node.prev = None
+        self.head = new_node
+        return
+
+    # 5. Else traverse till the last node
+    while last.next:
+        last = last.next
+
+    # 6. Change the next of last node
+    last.next = new_node
+
+    # 7. Make last node as previous of new node
+    new_node.prev = last
