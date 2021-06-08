@@ -29,6 +29,9 @@ def pair_sum(head, x):
             # Move second pointer in backward direction
             second = second.prev
         else:
-            second = second.prev
+            if (first.data + second.data) < x:
+                first = first.next
+            else:
+                second = second.prev
 
     return found
