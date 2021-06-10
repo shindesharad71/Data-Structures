@@ -1,8 +1,7 @@
 # Different ways to add node in the linked list
 # https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
 
-# A complete working Python program to demonstrate all
-# insertion methods of linked list
+# A complete working Python program to demonstrate all insertion methods of linked list
 
 # Node class
 class Node:
@@ -23,8 +22,7 @@ class LinkedList:
     # Function to insert a new node at the beginning
     def push(self, new_data):
 
-        # 1 & 2: Allocate the Node &
-        # 	 Put in the data
+        # 1 & 2: Allocate the Node & Put in the data
         new_node = Node(new_data)
 
         # 3. Make next of new Node as head
@@ -40,11 +38,10 @@ class LinkedList:
 
         # 1. check if the given prev_node exists
         if prev_node is None:
-            print("The given previous node must inLinkedList.")
+            print("The given previous node must in LinkedList.")
             return
 
-        # 2. create new node &
-        # 	 Put in the data
+        # 2. create new node & Put in the data
         new_node = Node(new_data)
 
         # 4. Make next of new Node as next of prev_node
@@ -55,7 +52,7 @@ class LinkedList:
 
     # This function is defined in Linked List class
     # Appends a new node at the end. This method is
-    # defined inside LinkedList class shown above */
+    # defined inside LinkedList class shown above
     def append(self, new_data):
 
         # 1. Create a new node
