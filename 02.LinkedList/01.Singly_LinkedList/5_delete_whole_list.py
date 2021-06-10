@@ -36,8 +36,7 @@ class LinkedList:
             # set current equals prev node
             current = prev
 
-        # In python garbage collection happens
-        # therefore, only
+        # In python garbage collection happens therefore, only
         # self.head = None
         # would also delete the link list
         self.head = None  # Just to make it sure!
