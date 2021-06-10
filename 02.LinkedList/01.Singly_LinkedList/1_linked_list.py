@@ -137,8 +137,7 @@ class LinkedList:
             # set current equals prev node
             current = prev
 
-        # In python garbage collection happens
-        # therefore, only
+        # In python garbage collection happens therefore, only
         # self.head = None
         # would also delete the link list
 
@@ -154,8 +153,7 @@ class LinkedList:
             temp = temp.next
         return count
 
-    # This Function checks whether the value
-    # x present in the linked list
+    # This Function checks whether the value x present in the linked list
     def search(self, x):
 
         # Initialize current to head
@@ -182,8 +180,7 @@ class LinkedList:
             count += 1
             current = current.next
 
-        # if we get to this line, the caller was asking
-        # for a non-existent element so we assert fail
+        # if we get to this line, the caller was asking for a non-existent element so we assert fail
         assert false
         return 0
 
