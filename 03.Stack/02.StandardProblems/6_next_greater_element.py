@@ -6,11 +6,6 @@
 # Stack Functions to be used by printNGE()
 
 
-def createStack():
-    stack = []
-    return stack
-
-
 def isEmpty(stack):
     return len(stack) == 0
 
@@ -31,21 +26,22 @@ arr[] """
 
 
 def printNGE(arr):
-    s = createStack()
+    stack = []
     element = 0
     next = 0
 
     # push the first element to stack
-    push(s, arr[0])
+    # push(stack, arr[0])
+    stack.append(arr[0])
 
     # iterate for rest of the elements
     for i in range(1, len(arr), 1):
         next = arr[i]
 
-        if isEmpty(s) == False:
+        if len(stack) != 0:
 
             # if stack is not empty, then pop an element from stack
-            element = pop(s)
+            element = pop(stack)
 
             """If the popped element is smaller than next, then
 				a) print the pair
@@ -53,25 +49,25 @@ def printNGE(arr):
 				stack is not empty """
             while element < next:
                 print(str(element) + " -- " + str(next))
-                if isEmpty(s) == True:
+                if isEmpty(stack) == True:
                     break
-                element = pop(s)
+                element = pop(stack)
 
             """If element is greater than next, then push
 			the element back """
             if element > next:
-                push(s, element)
+                stack.append(element)
 
         """push next to stack so that we can find
 		next greater for it """
-        push(s, next)
+        stack.append(next)
 
     """After iterating over the loop, the remaining
 	elements in stack do not have the next greater
 	element, so print -1 for them """
 
-    while isEmpty(s) == False:
-        element = pop(s)
+    while len(stack) != 0:
+        element = stack.pop()
         next = -1
         print(str(element) + " -- " + str(next))
 
