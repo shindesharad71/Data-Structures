@@ -10,10 +10,6 @@ def isEmpty(stack):
     return len(stack) == 0
 
 
-def push(stack, x):
-    stack.append(x)
-
-
 def pop(stack):
     if isEmpty(stack):
         print("Error : stack underflow")
@@ -49,7 +45,7 @@ def printNGE(arr):
 				stack is not empty """
             while element < next:
                 print(str(element) + " -- " + str(next))
-                if isEmpty(stack) == True:
+                if isEmpty(stack):
                     break
                 element = pop(stack)
 
