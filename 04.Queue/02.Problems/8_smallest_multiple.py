@@ -3,6 +3,7 @@
 
 from queue import Queue
 
+
 # Preprocessing function to generate
 # all possible numbers formed by 0 and 9
 def generate_number():
