@@ -37,3 +37,17 @@ def is_foldable_util(n1: Node, n2: Node) -> bool:
     d2 = is_foldable_util(n1.right, n2.left)
 
     return d1 and d2
+
+
+# Driver code
+if __name__ == "__main__":
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.right = Node(4)
+    root.right.left = Node(5)
+
+    if is_foldable(root):
+        print("Tree is foldable")
+    else:
+        print("Tree is not foldable")
