@@ -25,4 +25,4 @@ def get_postorder_bst(pre: list, n: int):
 if __name__ == "__main__":
     pre = [40, 30, 32, 35, 80, 90, 100, 120]
     n = len(pre)
-    get_postorder_BST(pre, n)
+    get_postorder_bst(pre, n)
