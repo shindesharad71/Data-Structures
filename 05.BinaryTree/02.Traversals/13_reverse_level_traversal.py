@@ -11,6 +11,13 @@ class Node:
 
 
 def reverse_level_order(root: Node):
+    # we can use a double ended queue which provides O(1) insert at the beginning
+    # using the appendleft method
+    # we do the regular level order traversal but instead of processing the
+    # left child first we process the right child first and the we process the left child
+    # of the current Node
+    # we can do this One pass reduce the space usage not in terms of complexity but intuitively
+
     q = deque()
 
     q.append(root)
