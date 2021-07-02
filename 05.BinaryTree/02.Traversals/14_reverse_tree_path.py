@@ -23,6 +23,9 @@ def reverse_tree_path_util(root: Node, data, temp, level, next_pos):
 
     temp[level] = root.data
 
+    # We go to right only when left does not
+    # contain given data. This way we make sure
+    # that correct path node is stored in temp[]
     right = None
 
     left, temp, next_pos = reverse_tree_path_util(
@@ -34,6 +37,8 @@ def reverse_tree_path_util(root: Node, data, temp, level, next_pos):
             root.right, data, temp, level + 1, next_pos
         )
 
+    # If current node is part of the path,
+    # then do reversing.
     if left or right:
         root.data = temp[next_pos]
 
