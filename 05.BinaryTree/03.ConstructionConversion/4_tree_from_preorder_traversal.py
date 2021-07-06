@@ -43,7 +43,7 @@ def construct_tree_util(pre: list, preLN: list, index_ptr, n: int):
     return temp
 
 
-# A wrapper over constructTreeUtil()
+# A wrapper over construct_tree_util()
 def construct_tree(pre: list, preLN: list, n: int):
     index = [0]
     return construct_tree_util(pre, preLN, index, n)
