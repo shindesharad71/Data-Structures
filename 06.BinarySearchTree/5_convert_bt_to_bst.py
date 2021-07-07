@@ -3,7 +3,7 @@
 
 # Binary Tree Node
 class Node:
-    def __init__(self, data):
+    def __init__(self, data: int):
         self.data = data
         self.left = self.right = None
 
@@ -39,7 +39,7 @@ def bt_to_bst(root: Node):
     if root is None:
         return
 
-    arr = []
+    arr: list = []
     store_inorder(root, arr)
 
     arr_to_bst(arr, root)
