@@ -8,47 +8,14 @@ class Node:
         self.left = self.right = None
 
 
-def store_inorder(root: Node, arr: list) -> None:
+def store_inorder(root: Node, arr: list):
     if root:
         store_inorder(root.left, arr)
         arr.append(root.data)
         store_inorder(root.right, arr)
 
 
-def count_nodes(root: Node) -> int:
-    if root is None:
-        return 0
-
-    return count_nodes(root.left) + count_nodes(root.right) + 1
-
-
-def arr_to_bst(arr: list, root: Node):
-    if root is None:
-        return
-
-    arr_to_bst(arr, root.left)
-
-    if len(arr) > 0:
-        root.data = arr[0]
-        arr.pop(0)
-
-    arr_to_bst(arr, root.right)
-
-
-def bt_to_bst(root: Node):
-    if root is None:
-        return
-
-    arr: list = []
-    store_inorder(root, arr)
-
-    arr_to_bst(arr, root)
-
-    arr.sort()
-
-    arr_to_bst(arr, root)
-
-
+# Print the inorder traversal of the tree
 def print_inorder(root: Node):
     if root:
         print_inorder(root.left)
@@ -56,7 +23,43 @@ def print_inorder(root: Node):
         print_inorder(root.right)
 
 
-# Driver Code
+# Helper function that copies contents of sorted array
+# to Binary tree
+def arr_to_bst(arr, root):
+    # Base Case
+    if root is None:
+        return
+
+    # First update the left subtree
+    arr_to_bst(arr, root.left)
+
+    # now update root's data delete the value from array
+    root.data = arr[0]
+    arr.pop(0)
+
+    # Finally update the right subtree
+    arr_to_bst(arr, root.right)
+
+
+# This function converts a given binary tree to BST
+def bt_to_bst(root):
+    # Base Case: Tree is empty
+    if root is None:
+        return
+
+    # Create the temp array and store the inorder traversal
+    # of tree
+    arr = []
+    store_inorder(root, arr)
+
+    # Sort the array
+    arr.sort()
+
+    # copy array elements back to binary tree
+    arr_to_bst(arr, root)
+
+
+# Driver program to test above function
 if __name__ == "__main__":
     root = Node(10)
     root.left = Node(30)
