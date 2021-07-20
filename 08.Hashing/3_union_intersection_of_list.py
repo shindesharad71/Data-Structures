@@ -73,6 +73,9 @@ def get_union_intersection_of_list(head1, head2):
     print_arr(intersection)
 
     print("Union list is:")
+    for key in union.keys():
+        print(union[key], end=" ")
+    print()
 
 
 # Driver Code
