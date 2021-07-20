@@ -18,18 +18,18 @@ class LinkedList:
         self.head = None
 
     # Function to insert a new node at the beginning
-    def push(self, new_data):
-        # 1 & 2: Allocate the Node & Put in the data
-        new_node = Node(new_data)
+    def push(self, data):
+        new_node = Node(data)
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+        else:
+            self.head = new_node
 
-        # 3. Make next of new Node as head
-        new_node.next = self.head
 
-        # 4. Move the head to point to new Node
-        self.head = new_node
-
-
-def linked_list_to_arr(head: Node) -> list:
+def linked_list_to_arr(head) -> list:
     arr = []
 
     current = head
@@ -47,7 +47,7 @@ def print_arr(arr: list):
     print()
 
 
-def get_union_intersection_of_list(head1: Node, head2: Node):
+def get_union_intersection_of_list(head1, head2):
     arr1 = linked_list_to_arr(head1)
     arr2 = linked_list_to_arr(head2)
 
@@ -78,14 +78,14 @@ def get_union_intersection_of_list(head1: Node, head2: Node):
 # Driver Code
 if __name__ == "__main__":
     head1 = LinkedList()
-    head1.push(1)
+    head1.head = Node(1)
     head1.push(2)
     head1.push(3)
     head1.push(4)
     head1.push(5)
 
     head2 = LinkedList()
-    head2.push(1)
+    head2.head = Node(1)
     head2.push(3)
     head2.push(5)
     head2.push(6)
