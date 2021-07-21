@@ -2,7 +2,7 @@
 # https://www.geeksforgeeks.org/count-maximum-points-on-same-line/
 
 
-def max_points(points):
+def max_points(points: list) -> int:
     n = len(points)
 
     # upto two points all points will be part of the line
