@@ -1,12 +1,9 @@
 # Find elements which are present in first array and not in second
 # https://www.geeksforgeeks.org/find-elements-present-first-array-not-second/
 
-# Python3 efficient program to find elements
-# which are not present in second array
-
 # Function for finding elements which
 # are there in a[] but not in b[].
-def findMissing(a, b, n, m):
+def find_missing(a, b, n, m):
     # Store all elements of second
     # array in a hash table
     s = dict()
@@ -26,4 +23,4 @@ if __name__ == "__main__":
     b = [2, 4, 3, 1, 0]
     n = len(a)
     m = len(b)
-    findMissing(a, b, n, m)
+    find_missing(a, b, n, m)
