@@ -3,7 +3,20 @@
 
 
 def find_pair(arr: list, n: int):
-    pass
+    # hash to store all element of array
+    s = {i: 1 for i in arr}
+
+    found = False
+
+    for i in range(n):
+        for j in range(i + 1, n):
+
+            if arr[i] in s.keys():
+                print(arr[i], arr[j])
+                found = True
+
+    if not found:
+        print("Not Exists")
 
 
 # Driver code
