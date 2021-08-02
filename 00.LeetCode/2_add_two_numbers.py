@@ -9,18 +9,38 @@ class ListNode:
 
 
 class Solution:
+    # My Solution
+    # def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    #     first_num = self.list_to_number(l1)
+    #     second_num = self.list_to_number(l2)
+    #
+    #     addition = str(first_num + second_num)
+    #
+    #     answer_node = None
+    #
+    #     for n in addition:
+    #         answer_node = self.insert(answer_node, int(n))
+    #
+    #     return answer_node
+
+    # Solution from LeetCode
+    # https://leetcode.com/problems/add-two-numbers/discuss/1353295/Python-Runtime-60ms
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        first_num = self.list_to_number(l1)
-        second_num = self.list_to_number(l2)
+        start = current = ListNode(0)
+        carry = 0
 
-        addition = str(first_num + second_num)
+        while l1 or l2 or carry:
+            first_num = l1.val if l1 else 0
+            second_num = l2.val if l2 else 0
 
-        answer_node = None
+            carry, val = divmod(first_num + second_num + carry, 10)
+            current.next = ListNode(val)
+            current = current.next
 
-        for n in addition:
-            answer_node = self.insert(answer_node, int(n))
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
 
-        return answer_node
+        return start.next
 
     @staticmethod
     def insert(node: ListNode, val: int) -> ListNode:
