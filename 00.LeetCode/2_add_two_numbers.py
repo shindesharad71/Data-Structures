@@ -12,8 +12,8 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         first_num = self.list_to_number(l1)
         second_num = self.list_to_number(l2)
-
-        sum = first_num + second_num
+        addition = first_num + second_num
+        print(first_num, second_num, addition)
 
     @staticmethod
     def insert(node: ListNode, val: int) -> ListNode:
@@ -21,12 +21,8 @@ class Solution:
         if node is None:
             return new_node
 
-        current = node
-        while current.next:
-            current = current.next
-
-        current.next = new_node
-        return node
+        new_node.next = node
+        return new_node
 
     @staticmethod
     def list_to_number(node: ListNode) -> int:
@@ -35,7 +31,7 @@ class Solution:
         num = "0"
         current = node
         while current:
-            num = f"{current.val}{num}"
+            num = f"{num}{current.val}"
             current = current.next
 
         return int(num)
@@ -59,14 +55,16 @@ if __name__ == "__main__":
     arr1 = [2, 4, 3]
     arr2 = [5, 6, 4]
 
-    l1 = ListNode(arr1[0])
-    l2 = ListNode(arr2[0])
+    list1 = None
+    list2 = None
 
-    for i in range(1, len(arr1)):
-        l1 = s.insert(l1, arr1[i])
+    for i in range(len(arr1)):
+        list1 = s.insert(list1, arr1[i])
 
-    for i in range(1, len(arr2)):
-        l2 = s.insert(l2, arr2[i])
+    for i in range(len(arr2)):
+        list2 = s.insert(list2, arr2[i])
 
-    s.print_list(l1)
-    s.print_list(l2)
+    s.print_list(list1)
+    s.print_list(list2)
+
+    s.addTwoNumbers(list1, list2)
