@@ -12,8 +12,15 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         first_num = self.list_to_number(l1)
         second_num = self.list_to_number(l2)
-        addition = first_num + second_num
-        print(first_num, second_num, addition)
+
+        addition = str(first_num + second_num)
+
+        answer_node = None
+
+        for n in addition:
+            answer_node = self.insert(answer_node, int(n))
+
+        return answer_node
 
     @staticmethod
     def insert(node: ListNode, val: int) -> ListNode:
@@ -64,7 +71,6 @@ if __name__ == "__main__":
     for i in range(len(arr2)):
         list2 = s.insert(list2, arr2[i])
 
-    s.print_list(list1)
-    s.print_list(list2)
+    answer = s.addTwoNumbers(list1, list2)
 
-    s.addTwoNumbers(list1, list2)
+    s.print_list(answer)
