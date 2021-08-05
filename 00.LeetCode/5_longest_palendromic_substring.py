@@ -3,8 +3,21 @@
 
 
 class Solution:
+    def isPalindrome(self, st: str):
+        return st == st[::-1]
+
     def longestPalindrome(self, s: str) -> str:
-        pass
+        if not s:
+            raise Exception("You weren't supposed to be null")
+
+        if self.isPalindrome(s):
+            return s
+
+        for i in range(len(s), 0, -1):
+            for j in range(0, len(s) - i + 1):
+                candidate = s[j : j + i]
+                if self.isPalindrome(candidate):
+                    return candidate
 
 
 # Driver Code
