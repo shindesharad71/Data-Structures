@@ -20,3 +20,12 @@ class Solution:
             index += step
 
         return "".join(L)
+
+
+# Diver Code
+if __name__ == "__main__":
+    s = "PAYPALISHIRING"
+    numRows = 3
+
+    sln = Solution()
+    print(sln.convert(s, numRows))
