@@ -3,9 +3,6 @@
 
 
 class Solution:
-    def isWithinRange(self, number):
-        return True if abs(number) < 2 ** 31 and number != 2 ** 31 - 1 else False
-
     def reverse(self, x: int) -> int:
         if 0 < x < 10:
             return x
@@ -26,7 +23,7 @@ class Solution:
         else:
             reverse_int = int(reverse_int)
 
-        return reverse_int if self.isWithinRange(reverse_int) else 0
+        return reverse_int if reverse_int.bit_length() < 32 else 0
 
 
 # Driver Code
