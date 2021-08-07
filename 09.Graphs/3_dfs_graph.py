@@ -26,9 +26,9 @@ class Graph:
 
         # Recur for all the vertices
         # adjacent to this vertex
-        for neighbour in self.graph[v]:
-            if neighbour not in visited:
-                self.DFSUtil(neighbour, visited)
+        for neighbor in self.graph[v]:
+            if neighbor not in visited:
+                self.DFSUtil(neighbor, visited)
 
     # The function to do DFS traversal. It uses
     # recursive DFSUtil()
