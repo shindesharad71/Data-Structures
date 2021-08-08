@@ -4,11 +4,11 @@
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        pass
+        return x == int(str(x)[::-1])
 
 
 # Driver Code
 if __name__ == "__main__":
     sln = Solution()
-    x = 123
+    x = 121
     print(sln.isPalindrome(x))
