@@ -9,16 +9,21 @@ class Graph:
         self.v = v
         self.graph = defaultdict(list)
 
+    # A recursive function to print DFS starting from v
     def DFSUtil(self, v, visited):
+        # Mark the current node as visited and print it
         visited[v] = True
 
+        # Recur for all the vertices adjacent to this vertex
         for i in self.graph[v]:
             if not visited[i]:
                 self.DFSUtil(i, visited)
 
+    # Add w to the list of v
     def addEdge(self, v, w):
         self.graph[v].append(w)
 
+    # Returns a mother vertex if exists. Otherwise returns -1
     def findMother(self):
         visited = [False] * self.v
 
