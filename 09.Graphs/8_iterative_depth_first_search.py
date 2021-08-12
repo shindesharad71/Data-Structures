@@ -7,7 +7,7 @@ class Graph:
         self.v = v
         self.adj = [[] for i in range(v)]
 
-    def adj(self, v, w):
+    def addEdge(self, v, w):
         self.adj[v].append(w)
 
     def DFS(self, s):
@@ -26,3 +26,16 @@ class Graph:
             for node in self.adj[s]:
                 if not visited[node]:
                     stack.append(node)
+
+
+# Driver Code
+if __name__ == "__main__":
+    g = Graph(5)  # Total 5 vertices in graph
+    g.addEdge(1, 0)
+    g.addEdge(0, 2)
+    g.addEdge(2, 1)
+    g.addEdge(0, 3)
+    g.addEdge(1, 4)
+
+    print("Following is Depth First Traversal")
+    g.DFS(0)
