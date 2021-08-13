@@ -28,7 +28,7 @@ def BFS(s, l):
     queue.append(s)
     level[s] = 0
 
-    while len(deque):
+    while len(queue):
         s = queue.popleft()
 
         for i in adj[s]:
@@ -43,3 +43,18 @@ def BFS(s, l):
             count += 1
 
     return count
+
+
+# Driver code
+if __name__ == "__main__":
+    # Create a graph given
+    # in the above diagram
+    addEdge(0, 1)
+    addEdge(0, 2)
+    addEdge(1, 3)
+    addEdge(2, 4)
+    addEdge(2, 5)
+
+    level = 2
+
+    print(BFS(0, level))
