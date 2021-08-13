@@ -34,3 +34,20 @@ class Graph:
                 i += 1
 
         visited[u] = False
+
+
+# Driver Code
+if __name__ == "__main__":
+    # Create a graph given in the
+    # above diagram
+    g = Graph(4)
+    g.addEdge(0, 1)
+    g.addEdge(0, 2)
+    g.addEdge(0, 3)
+    g.addEdge(2, 0)
+    g.addEdge(2, 1)
+    g.addEdge(1, 3)
+
+    s = 2
+    d = 3
+    print(g.countPaths(s, d))
