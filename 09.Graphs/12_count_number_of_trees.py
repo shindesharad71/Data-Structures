@@ -22,3 +22,14 @@ def countTrees(adj, v):
             DFSUtil(u, adj, visited)
             res += 1
     return res
+
+
+# Driver code
+if __name__ == "__main__":
+
+    V = 5
+    adj = [[] for i in range(V)]
+    addEdge(adj, 0, 1)
+    addEdge(adj, 0, 2)
+    addEdge(adj, 3, 4)
+    print(countTrees(adj, V))
