@@ -33,3 +33,22 @@ def printLevels(graph, v, x):
     print("Nodes", " ", "Level")
     for i in range(V):
         print(" ", i, " --> ", level[i])
+
+
+# Driver Code
+if __name__ == "__main__":
+    # adjacency graph for tree
+    V = 8
+    graph = [[] for i in range(V)]
+
+    graph[0].append(1)
+    graph[0].append(2)
+    graph[1].append(3)
+    graph[1].append(4)
+    graph[1].append(5)
+    graph[2].append(5)
+    graph[2].append(6)
+    graph[6].append(7)
+
+    # call levels function with source as 0
+    printLevels(graph, V, 0)
