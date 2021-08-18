@@ -4,11 +4,11 @@
 
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        pass
+        return len(s.strip().split()[-1])
 
 
 # Driver Code
 if __name__ == "__main__":
     sln = Solution()
-    s = "Hello World"
+    s = "luffy is still joyboy"
     print(sln.lengthOfLastWord(s))
